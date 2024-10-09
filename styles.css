@@ -1,0 +1,187 @@
+/* Стили для базового форматирования */
+body {
+    margin: 0; /* Убираем отступы */
+    display: flex; /* Используем Flexbox */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    min-height: 100vh; /* Высота экрана */
+    font-family: Arial, sans-serif;
+    background-color: #000000; /* Черный фон */
+    background-image: url('path/to/your/halloween-background.jpg'); /* Путь к вашему изображению */
+    background-size: cover; /* Изображение покрывает весь экран */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #FFFFFF; /* Белый цвет текста для контраста */
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+.logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Creepster', cursive;
+    color: #FF7518; /* Ярко-оранжевый цвет для заголовков */
+}
+
+.smileys {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Элементы переносятся при необходимости */
+}
+
+.smiley {
+    margin: 20px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.2s; /* Анимация при наведении */
+}
+
+.smiley:hover {
+    transform: scale(1.1);
+}
+
+.emoji {
+    font-size: 8rem; /* Размер эмодзи */
+    display: block;
+}
+
+#satisfied .emoji {
+    color: green;
+}
+
+#unsatisfied .emoji {
+    color: red;
+}
+
+.smiley p {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+/* Адаптивность для экранов менее 600px */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    .emoji {
+        font-size: 6rem;
+    }
+    .smiley p {
+        font-size: 1.2em;
+    }
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Остаётся на месте */
+    z-index: 1; /* Находится перед другими элементами */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Включает прокрутку при необходимости */
+    background-color: rgba(0,0,0,0.4); /* Тёмный фон с прозрачностью */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* Центрирование */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.modal-content p {
+    font-size: 1.5em;
+    color: #FF7518; /* Оранжевый цвет ссылок */
+    text-decoration: none;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category-button {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px; 
+    background-color: #4285F4; /* Цвет кнопки */
+    color: #fff;
+    transition: background-color 0.2s;
+}
+
+.category-button:hover {
+    background-color: #357AE8;
+}
+
+
+a {
+    color: #FF7518; /* Оранжевый цвет ссылок */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFFFFF; /* Белый цвет при наведении */
+}
+
+.spiderweb {
+    position: fixed;
+    width: 200px;
+    height: auto;
+    z-index: 1000;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+}
+
+.bat {
+    position: absolute;
+    width: 250px;
+    height: 220px;
+    background-image: url('bat.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: fly 25s linear infinite;
+}
+
+@keyframes fly {
+    0% { transform: translateX(-100px) translateY(0); }
+    50% { transform: translateX(100vw) translateY(50vh); }
+    100% { transform: translateX(-100px) translateY(0); }
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+}

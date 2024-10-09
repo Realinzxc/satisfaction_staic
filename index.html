@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Настройка категории оценки</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Логотип -->
+        <img src="logo.png" alt="Логотип" class="logo">
+        <h1>Выберите категорию для оценки</h1>
+        <div class="categories">
+            <button class="category-button" data-category="Фуршет">Фуршет</button>
+            <button class="category-button" data-category="Квест">Квест</button>
+            <button class="category-button" data-category="Фотозоны">Фотозоны</button>
+            <button class="category-button" data-category="Мастер-классы">Мастер-классы</button>
+            <button class="category-button" data-category="Конкурс костюмов">Конкурс костюмов</button>
+        </div>
+    </div>
+    <script>
+        // Скрипт для отправки выбранной категории на сервер
+        document.querySelectorAll('.category-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.getAttribute('data-category');
+                // Отправляем выбранную категорию на сервер
+                fetch('/set_category', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ category: category })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Перенаправляем на страницу опроса
+                    window.location.href = 'feedback.html';
+                })
+                .catch((error) => {
+                    console.error('Ошибка:', error);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

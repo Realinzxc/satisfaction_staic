@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Оценка качества</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Логотип -->
+        <img src="logo.png" alt="Логотип" class="logo">
+        <!-- Заголовок будет динамическим, в зависимости от выбранной категории -->
+        <h1 id="category-title">Пожалуйста, оцените качество</h1>
+        <div class="smileys">
+            <div class="smiley" id="satisfied">
+                <span class="emoji">😊</span>
+                <p>Хорошо</p>
+            </div>
+            <div class="smiley" id="neutral">
+                <span class="emoji">😐</span>
+                <p>Средне</p>
+            </div>
+            <div class="smiley" id="unsatisfied">
+                <span class="emoji">😞</span>
+                <p>Плохо</p>
+            </div>
+        </div>
+    </div>
+    <!-- Модальное окно -->
+    <div id="thankyouModal" class="modal">
+        <div class="modal-content">
+            <p>Спасибо за ваш ответ!</p>
+        </div>
+    </div>
+    <script src="feedback.js"></script>
+</body>
+</html>
